@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pixer-fix
+spec:
+  selector:
+    matchLabels:
+      app: pixer-fix
+  template:
+    metadata:
+      labels:
+        app: pixer-fix
+    spec:
+      containers:
+      - name: pix-mix
+        image: monyslim/pixer-app:1
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
