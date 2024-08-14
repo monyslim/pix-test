@@ -15,9 +15,10 @@ pipeline{
                         cd /home/cyclobold-computer-3/pix-mix
                         docker build -t monyslim/test-pixmix:1 .
                         docker run -d --name runner -p 802:80 monyslim/test-pixmix:1
+                        sleep 500
                         docker ps
                         docker stop runner
-                        sleep 300
+                        sleep 1000
                         docker rm runner
                         echo '-------------done------------'
                '''
