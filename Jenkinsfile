@@ -18,7 +18,6 @@ pipeline{
                         sleep 500
                         docker ps
                         docker stop runner
-                        sleep 1000
                         docker rm runner
                         echo '-------------done------------'
                '''
